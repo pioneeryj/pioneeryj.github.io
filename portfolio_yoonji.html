@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="robots" content="noindex, nofollow"/>
+<title>Your Name — Data Scientist & ML Engineer</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;1,400&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --bg:      #ffffff;
+  --bg2:     #f7f7f5;
+  --bg3:     #f1f1ef;
+  --border:  #e8e8e5;
+  --border2: #d3d3cf;
+  --text:    #1a1a18;
+  --text2:   #6b6b68;
+  --text3:   #9b9b97;
+  --tag-bg:  #efefed;
+  --tag-txt: #5a5a57;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0 48px; height: 52px;
+  background: rgba(255,255,255,0.95);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo { font-size: 14px; font-weight: 500; color: var(--text); text-decoration: none; }
+.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-links a { font-size: 13px; color: var(--text2); text-decoration: none; }
+.nav-links a:hover { color: var(--text); }
+.nav-cta {
+  font-size: 13px; font-weight: 500; padding: 6px 14px;
+  border: 1px solid var(--border2); border-radius: 6px;
+  color: var(--text); text-decoration: none;
+}
+.nav-cta:hover { background: var(--bg2); }
+
+/* PAGE */
+.page { max-width: 800px; margin: 0 auto; padding: 0 48px; }
+
+/* HERO */
+.hero { padding: 112px 0 64px; border-bottom: 1px solid var(--border); }
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--text3); margin-bottom: 22px;
+}
+.eyebrow::before { content: ''; width: 16px; height: 1px; background: var(--border2); display: block; }
+h1 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 44px; font-weight: 400; letter-spacing: -0.03em; line-height: 1.12;
+  margin-bottom: 18px;
+}
+h1 em { font-style: italic; color: var(--text2); }
+.hero-desc {
+  font-size: 15px; line-height: 1.8; color: var(--text2);
+  font-weight: 300; max-width: 540px; margin-bottom: 28px;
+}
+.hero-links { display: flex; flex-wrap: wrap; gap: 8px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 13px; font-weight: 500; padding: 7px 14px;
+  border-radius: 6px; text-decoration: none;
+  border: 1px solid var(--border); color: var(--text2); background: var(--bg);
+}
+.btn:hover { border-color: var(--border2); color: var(--text); background: var(--bg2); }
+.btn.primary { background: var(--text); color: #fff; border-color: var(--text); }
+.btn.primary:hover { background: #333; }
+.btn svg { width: 13px; height: 13px; }
+
+/* SECTION */
+.sec { padding: 56px 0; border-bottom: 1px solid var(--border); }
+.sec-label {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--text3); margin-bottom: 24px;
+}
+h2 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 26px; font-weight: 400; letter-spacing: -0.02em; line-height: 1.25;
+  margin-bottom: 6px;
+}
+.sec-intro { font-size: 13px; color: var(--text2); line-height: 1.7; max-width: 520px; margin-bottom: 24px; }
+
+/* TAG */
+.tag {
+  display: inline-block;
+  font-size: 11px; padding: 2px 8px; border-radius: 4px;
+  background: var(--tag-bg); color: var(--tag-txt);
+}
+
+/* SKILLS */
+.skills-wrap { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+.skill-row {
+  display: flex; gap: 14px; align-items: flex-start;
+  padding: 13px 18px; border-bottom: 1px solid var(--border); background: var(--bg);
+}
+.skill-row:last-child { border-bottom: none; }
+.skill-name { font-size: 13px; font-weight: 500; color: var(--text); min-width: 130px; flex-shrink: 0; }
+.skill-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+
+/* PROJECT GRID */
+.proj-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+  border: 1px solid var(--border); border-radius: 8px;
+  overflow: hidden; background: var(--border);
+}
+.proj-card { padding: 20px; background: var(--bg); }
+.proj-card:hover { background: var(--bg2); }
+.proj-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px; }
+.proj-card h3 { font-size: 13px; font-weight: 600; margin-bottom: 6px; color: var(--text); }
+.proj-card p { font-size: 12px; color: var(--text2); line-height: 1.65; margin-bottom: 12px; }
+.link-row { display: flex; gap: 6px; flex-wrap: wrap; }
+.plink {
+  font-size: 12px; font-weight: 500; color: var(--text2); text-decoration: none;
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 4px 10px; border: 1px solid var(--border); border-radius: 4px; background: var(--bg);
+}
+.plink:hover { border-color: var(--border2); color: var(--text); background: var(--bg3); }
+
+/* RESEARCH ACCORDION */
+.r-list { display: flex; flex-direction: column; gap: 8px; }
+.r-card { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+.r-card:hover { border-color: var(--border2); }
+.r-head {
+  padding: 16px 18px; cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  background: var(--bg); user-select: none;
+}
+.r-head:hover { background: var(--bg2); }
+.r-title-group { flex: 1; }
+.r-badges { display: flex; gap: 5px; margin-bottom: 5px; }
+.r-card h3 { font-size: 13px; font-weight: 600; color: var(--text); }
+.r-sub { font-size: 11px; color: var(--text3); margin-top: 2px; }
+.chevron { width: 15px; height: 15px; color: var(--text3); flex-shrink: 0; transition: transform 0.2s; }
+.r-card.open .chevron { transform: rotate(90deg); }
+.r-body { display: none; border-top: 1px solid var(--border); padding: 0 18px 18px; }
+.r-card.open .r-body { display: block; }
+.r-layout { display: grid; grid-template-columns: 185px 1fr; gap: 18px; padding-top: 16px; }
+.fig-box {
+  background: var(--bg2); border: 1px solid var(--border); border-radius: 6px;
+  aspect-ratio: 4/3; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; color: var(--text3);
+  font-size: 11px; overflow: hidden; text-align: center; padding: 12px;
+}
+.fig-box img { width: 100%; height: 100%; object-fit: cover; border-radius: 4px; }
+.r-details { display: flex; flex-direction: column; gap: 13px; }
+.d-label {
+  font-size: 10px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase;
+  color: var(--text3); margin-bottom: 7px;
+}
+.blist { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+.blist li {
+  font-size: 12px; color: var(--text2); line-height: 1.55;
+  display: flex; gap: 8px; align-items: flex-start;
+}
+.blist li::before { content: '—'; color: var(--border2); flex-shrink: 0; }
+.r-footer {
+  display: flex; gap: 6px; flex-wrap: wrap;
+  margin-top: 13px; padding-top: 13px; border-top: 1px solid var(--border);
+}
+
+/* CO-AUTHORS */
+.co-list { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+.co-row {
+  display: flex; align-items: center; gap: 14px;
+  padding: 13px 18px; border-bottom: 1px solid var(--border); background: var(--bg);
+}
+.co-row:last-child { border-bottom: none; }
+.co-row:hover { background: var(--bg2); }
+.co-name { font-size: 13px; font-weight: 600; color: var(--text); flex: 1; }
+.co-venue { font-size: 12px; color: var(--text3); min-width: 120px; }
+.co-role { font-size: 12px; color: var(--text2); min-width: 70px; }
+
+/* EXPERIENCE */
+.tl { display: flex; flex-direction: column; }
+.tl-row {
+  display: grid; grid-template-columns: 130px 1fr; gap: 20px;
+  padding: 16px 0; border-bottom: 1px solid var(--border);
+}
+.tl-row:first-child { padding-top: 0; }
+.tl-row:last-child { border-bottom: none; padding-bottom: 0; }
+.tl-date { font-size: 12px; color: var(--text3); padding-top: 2px; }
+.tl-role { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+.tl-company { font-size: 12px; color: var(--text2); margin-bottom: 5px; }
+.tl-desc { font-size: 12px; color: var(--text2); line-height: 1.65; }
+
+/* BLOG */
+.blog-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+  border: 1px solid var(--border); border-radius: 8px;
+  overflow: hidden; background: var(--border);
+}
+.blog-card {
+  padding: 18px; background: var(--bg);
+  text-decoration: none; color: inherit; display: block;
+}
+.blog-card:hover { background: var(--bg2); }
+.blog-date { font-size: 11px; color: var(--text3); margin-bottom: 6px; }
+.blog-title { font-size: 12px; font-weight: 500; color: var(--text); line-height: 1.5; margin-bottom: 5px; }
+.blog-desc { font-size: 11px; color: var(--text2); line-height: 1.55; }
+
+/* CONTACT */
+.contact-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+
+/* FOOTER */
+footer {
+  padding: 20px 48px; border-top: 1px solid var(--border);
+  font-size: 12px; color: var(--text3);
+  display: flex; justify-content: space-between;
+}
+
+/* RESPONSIVE */
+@media (max-width: 680px) {
+  .page { padding: 0 20px; }
+  nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  h1 { font-size: 30px; }
+  .proj-grid { grid-template-columns: 1fr; }
+  .r-layout { grid-template-columns: 1fr; }
+  .blog-grid { grid-template-columns: 1fr; }
+  .tl-row { grid-template-columns: 1fr; gap: 4px; }
+  footer { flex-direction: column; gap: 4px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">Your Name</a>
+  <ul class="nav-links">
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="nav-cta" href="#">Resume ↗</a>
+</nav>
+
+<div class="page">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="eyebrow">Data Scientist · ML Engineer</div>
+  <h1>Turning <em>messy data</em><br>into clear decisions.</h1>
+  <p class="hero-desc">
+    3+ years building machine learning systems from prototype to production —
+    with experience in NLP, computer vision, and applied statistics.
+    Currently pursuing graduate research in AI.
+  </p>
+  <div class="hero-links">
+    <a class="btn primary" href="#research">View Research</a>
+    <a class="btn" href="https://github.com/pioneeryj" target="_blank">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      GitHub
+    </a>
+    <a class="btn" href="#" target="_blank">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      LinkedIn
+    </a>
+    <a class="btn" href="#">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      Resume PDF
+    </a>
+    <a class="btn" href="#">Google Scholar ↗</a>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="sec" id="skills">
+  <div class="sec-label">Skills</div>
+  <div class="skills-wrap">
+    <div class="skill-row">
+      <span class="skill-name">Machine Learning</span>
+      <div class="skill-tags">
+        <span class="tag">PyTorch</span><span class="tag">TensorFlow</span><span class="tag">scikit-learn</span><span class="tag">XGBoost</span><span class="tag">HuggingFace</span>
+      </div>
+    </div>
+    <div class="skill-row">
+      <span class="skill-name">Data Engineering</span>
+      <div class="skill-tags">
+        <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Spark</span><span class="tag">Airflow</span><span class="tag">dbt</span>
+      </div>
+    </div>
+    <div class="skill-row">
+      <span class="skill-name">Cloud &amp; MLOps</span>
+      <div class="skill-tags">
+        <span class="tag">AWS SageMaker</span><span class="tag">GCP Vertex</span><span class="tag">MLflow</span><span class="tag">Docker</span>
+      </div>
+    </div>
+    <div class="skill-row">
+      <span class="skill-name">Analytics &amp; Viz</span>
+      <div class="skill-tags">
+        <span class="tag">Pandas</span><span class="tag">Plotly</span><span class="tag">Tableau</span><span class="tag">Streamlit</span>
+      </div>
+    </div>
+    <div class="skill-row">
+      <span class="skill-name">Generative AI</span>
+      <div class="skill-tags">
+        <span class="tag">LLMs</span><span class="tag">RAG</span><span class="tag">Fine-tuning</span><span class="tag">LangChain</span>
+      </div>
+    </div>
+    <div class="skill-row">
+      <span class="skill-name">Statistics</span>
+      <div class="skill-tags">
+        <span class="tag">A/B Testing</span><span class="tag">Causal Inf.</span><span class="tag">Bayesian</span><span class="tag">Time Series</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DATA ANALYSIS PROJECTS -->
+<section class="sec" id="projects">
+  <div class="sec-label">Data Analysis Projects</div>
+  <p class="sec-intro">Academic and industry projects in spatial analysis, demand forecasting, and real-world sensor data.</p>
+  <div class="proj-grid">
+    <div class="proj-card">
+      <div class="proj-tags"><span class="tag">Spatial Analysis</span><span class="tag">QGIS</span><span class="tag">CUAI</span></div>
+      <h3>CCTV Optimal Placement</h3>
+      <p>Analyzed crime hotspots across Seoul using GIS data to determine optimal CCTV installation locations. Published as an academic paper with full reproducibility.</p>
+      <div class="link-row">
+        <a class="plink" href="#" target="_blank">📄 Paper</a>
+        <a class="plink" href="https://github.com/pioneeryj" target="_blank">🔗 GitHub</a>
+      </div>
+    </div>
+    <div class="proj-card">
+      <div class="proj-tags"><span class="tag">Demand Forecasting</span><span class="tag">Public Data</span></div>
+      <h3>Ddareungi Plus</h3>
+      <p>Designed an improved demand prediction model for Seoul's public bicycle-sharing system using real-world usage patterns and environmental variables.</p>
+      <div class="link-row">
+        <a class="plink" href="#" target="_blank">📄 Paper</a>
+      </div>
+    </div>
+    <div class="proj-card">
+      <div class="proj-tags"><span class="tag">Industry Research</span><span class="tag">Sensor Data</span></div>
+      <h3>LiveData Research — Paper 1</h3>
+      <p>Applied statistical modeling to live sensor streams in an industrial context, resulting in a peer-reviewed publication co-authored with the research team.</p>
+      <div class="link-row">
+        <a class="plink" href="#" target="_blank">📄 Paper</a>
+      </div>
+    </div>
+    <div class="proj-card">
+      <div class="proj-tags"><span class="tag">Industry Research</span><span class="tag">Time Series</span></div>
+      <h3>LiveData Research — Paper 2</h3>
+      <p>Extended the first study with improved temporal modeling and a more robust feature engineering pipeline, achieving higher prediction stability.</p>
+      <div class="link-row">
+        <a class="plink" href="#" target="_blank">📄 Paper</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI & RESEARCH -->
+<section class="sec" id="research">
+  <div class="sec-label">AI &amp; Research Portfolio</div>
+  <p class="sec-intro">Graduate research and industry collaborations in computer vision, NLP, and anomaly detection. Click each to expand.</p>
+  <div class="r-list">
+
+    <!-- CareMind -->
+    <div class="r-card">
+      <div class="r-head" onclick="toggle(this)">
+        <div class="r-title-group">
+          <div class="r-badges"><span class="tag">Computer Vision</span><span class="tag">Industry</span></div>
+          <h3>CareMind — Pose Estimation</h3>
+          <div class="r-sub">Joint project with CareMind · 2023</div>
+        </div>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </div>
+      <div class="r-body">
+        <div class="r-layout">
+          <div class="fig-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            <div style="margin-top:6px">Add figure</div>
+          </div>
+          <div class="r-details">
+            <div>
+              <div class="d-label">Techniques</div>
+              <ul class="blist">
+                <li>MediaPipe / OpenPose-based skeleton extraction</li>
+                <li>Real-time joint angle estimation pipeline</li>
+                <li>Custom post-processing for rehabilitation metrics</li>
+              </ul>
+            </div>
+            <div>
+              <div class="d-label">Contribution</div>
+              <ul class="blist">
+                <li>Built end-to-end inference pipeline deployable on edge devices</li>
+                <li>Reduced latency via optimized frame-skipping strategy</li>
+              </ul>
+            </div>
+            <div class="r-footer">
+              <a class="plink" href="https://github.com/pioneeryj" target="_blank">🔗 GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Doosan -->
+    <div class="r-card">
+      <div class="r-head" onclick="toggle(this)">
+        <div class="r-title-group">
+          <div class="r-badges"><span class="tag">Industry</span><span class="tag">Confidential</span></div>
+          <h3>Doosan — Industry Collaboration</h3>
+          <div class="r-sub">Confidential · Details withheld per NDA</div>
+        </div>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </div>
+      <div class="r-body">
+        <div style="padding-top:16px">
+          <div class="d-label">Competencies Developed</div>
+          <ul class="blist" style="margin-top:7px">
+            <li>Designing ML pipelines for large-scale industrial sensor data</li>
+            <li>Cross-functional collaboration with domain engineers and product managers</li>
+            <li>Navigating data governance and security constraints in enterprise settings</li>
+            <li>Translating ambiguous business requirements into model specifications</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Research 1 -->
+    <div class="r-card">
+      <div class="r-head" onclick="toggle(this)">
+        <div class="r-title-group">
+          <div class="r-badges"><span class="tag">NLP</span><span class="tag">Graduate Research</span></div>
+          <h3>Medical Report Generation</h3>
+          <div class="r-sub">First author · Venue · 2024</div>
+        </div>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </div>
+      <div class="r-body">
+        <div class="r-layout">
+          <div class="fig-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            <div style="margin-top:6px">Add figure</div>
+          </div>
+          <div class="r-details">
+            <div>
+              <div class="d-label">Techniques</div>
+              <ul class="blist">
+                <li>Transformer-based encoder-decoder architecture</li>
+                <li>Cross-modal attention between image features and text</li>
+                <li>Evaluation via BLEU, ROUGE, CIDEr metrics</li>
+              </ul>
+            </div>
+            <div>
+              <div class="d-label">Contribution</div>
+              <ul class="blist">
+                <li>Proposed novel cross-modal alignment module</li>
+                <li>+X.X BLEU improvement over SOTA baseline</li>
+                <li>Supports multi-disease report generation</li>
+              </ul>
+            </div>
+            <div class="r-footer">
+              <a class="plink" href="#" target="_blank">📄 Paper</a>
+              <a class="plink" href="https://github.com/pioneeryj" target="_blank">🔗 GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Research 2 -->
+    <div class="r-card">
+      <div class="r-head" onclick="toggle(this)">
+        <div class="r-title-group">
+          <div class="r-badges"><span class="tag">Anomaly Detection</span><span class="tag">Graduate Research</span></div>
+          <h3>Concept-Oriented Anomaly Detection</h3>
+          <div class="r-sub">First author · Venue · 2024</div>
+        </div>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </div>
+      <div class="r-body">
+        <div class="r-layout">
+          <div class="fig-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            <div style="margin-top:6px">Add figure</div>
+          </div>
+          <div class="r-details">
+            <div>
+              <div class="d-label">Techniques</div>
+              <ul class="blist">
+                <li>Concept bottleneck model for interpretable anomaly scoring</li>
+                <li>Contrastive learning on concept-level embeddings</li>
+                <li>Evaluated on MVTec-AD and custom industrial datasets</li>
+              </ul>
+            </div>
+            <div>
+              <div class="d-label">Contribution</div>
+              <ul class="blist">
+                <li>First to introduce concept-level supervision for anomaly detection</li>
+                <li>Improved interpretability without accuracy trade-off</li>
+              </ul>
+            </div>
+            <div class="r-footer">
+              <a class="plink" href="#" target="_blank">📄 Paper</a>
+              <a class="plink" href="https://github.com/pioneeryj" target="_blank">🔗 GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Research 3 -->
+    <div class="r-card">
+      <div class="r-head" onclick="toggle(this)">
+        <div class="r-title-group">
+          <div class="r-badges"><span class="tag">Uncertainty</span><span class="tag">Graduate Research</span></div>
+          <h3>Uncertainty-Based Masking</h3>
+          <div class="r-sub">First author · Venue · 2024</div>
+        </div>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </div>
+      <div class="r-body">
+        <div class="r-layout">
+          <div class="fig-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            <div style="margin-top:6px">Add figure</div>
+          </div>
+          <div class="r-details">
+            <div>
+              <div class="d-label">Techniques</div>
+              <ul class="blist">
+                <li>Bayesian uncertainty estimation via MC Dropout</li>
+                <li>Uncertainty-guided mask generation for self-supervised learning</li>
+                <li>Benchmarked on ImageNet and CIFAR variants</li>
+              </ul>
+            </div>
+            <div>
+              <div class="d-label">Contribution</div>
+              <ul class="blist">
+                <li>Proposed adaptive masking ratio driven by model uncertainty</li>
+                <li>Consistent downstream classification gains across benchmarks</li>
+              </ul>
+            </div>
+            <div class="r-footer">
+              <a class="plink" href="#" target="_blank">📄 Paper</a>
+              <a class="plink" href="https://github.com/pioneeryj" target="_blank">🔗 GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CO-AUTHORED PAPERS -->
+<section class="sec" id="coauthored">
+  <div class="sec-label">Co-authored Papers</div>
+  <p class="sec-intro">Contributing author on published or under-review work across multiple research threads.</p>
+  <div class="co-list">
+    <div class="co-row">
+      <span class="co-name">HyCal</span>
+      <span class="co-venue">OpenReview</span>
+      <span class="co-role">Co-author</span>
+      <a class="plink" href="https://openreview.net/attachment?id=hgzrkrssmJ&name=pdf" target="_blank">📄 Paper</a>
+    </div>
+    <div class="co-row">
+      <span class="co-name">RefLens</span>
+      <span class="co-venue">OpenReview</span>
+      <span class="co-role">Co-author</span>
+      <a class="plink" href="https://openreview.net/attachment?id=EpSTJik0WK&name=pdf" target="_blank">📄 Paper</a>
+    </div>
+    <div class="co-row">
+      <span class="co-name">PiFi</span>
+      <span class="co-venue">ACL 2025</span>
+      <span class="co-role">Co-author</span>
+      <a class="plink" href="https://aclanthology.org/2025.acl-long.271.pdf" target="_blank">📄 Paper</a>
+    </div>
+    <div class="co-row">
+      <span class="co-name">CUPID</span>
+      <span class="co-venue">OpenReview</span>
+      <span class="co-role">Co-author</span>
+      <a class="plink" href="https://openreview.net/attachment?id=007sKp296k&name=pdf" target="_blank">📄 Paper</a>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="sec" id="experience">
+  <div class="sec-label">Experience</div>
+  <div class="tl">
+    <div class="tl-row">
+      <div class="tl-date">2023 – Present</div>
+      <div>
+        <div class="tl-role">Graduate Researcher</div>
+        <div class="tl-company">University Lab · Seoul</div>
+        <div class="tl-desc">Leading research in medical AI, anomaly detection, and self-supervised learning. 3 first-author papers; 4 co-authored publications.</div>
+      </div>
+    </div>
+    <div class="tl-row">
+      <div class="tl-date">2022 – 2023</div>
+      <div>
+        <div class="tl-role">ML Engineer / Data Scientist</div>
+        <div class="tl-company">LiveData · Seoul</div>
+        <div class="tl-desc">Applied time-series modeling and statistical analysis to industrial sensor data. Co-authored two research publications from industry datasets.</div>
+      </div>
+    </div>
+    <div class="tl-row">
+      <div class="tl-date">2021</div>
+      <div>
+        <div class="tl-role">Research Intern</div>
+        <div class="tl-company">CUAI · Seoul</div>
+        <div class="tl-desc">Conducted spatial analysis for CCTV placement optimization using QGIS and Python. Published results as a first-author paper.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="sec" id="blog">
+  <div class="sec-label">Paper Review Blog</div>
+  <p class="sec-intro">Writing about recent ML papers — breaking down methods, replicating key results, and connecting ideas across fields.</p>
+  <div class="blog-grid">
+    <a class="blog-card" href="#">
+      <div class="blog-date">2024. 11</div>
+      <div class="blog-title">Paper title or topic here</div>
+      <div class="blog-desc">One-line summary of what you found interesting.</div>
+    </a>
+    <a class="blog-card" href="#">
+      <div class="blog-date">2024. 10</div>
+      <div class="blog-title">Paper title or topic here</div>
+      <div class="blog-desc">One-line summary of what you found interesting.</div>
+    </a>
+    <a class="blog-card" href="#">
+      <div class="blog-date">2024. 09</div>
+      <div class="blog-title">Paper title or topic here</div>
+      <div class="blog-desc">One-line summary of what you found interesting.</div>
+    </a>
+  </div>
+  <div style="margin-top:12px;">
+    <a class="plink" href="#">모든 포스트 보기 ↗</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sec" id="contact" style="border-bottom:none; padding-bottom:80px;">
+  <div class="sec-label">Contact</div>
+  <h2>Let's talk.</h2>
+  <p class="sec-intro" style="margin-bottom:0">
+    Open to full-time roles in ML engineering and data science.<br>Feel free to reach out — I usually respond within a day.
+  </p>
+  <div class="contact-links">
+    <a class="btn primary" href="mailto:yourname@email.com">✉ yourname@email.com</a>
+    <a class="btn" href="https://github.com/pioneeryj" target="_blank">GitHub ↗</a>
+    <a class="btn" href="#" target="_blank">LinkedIn ↗</a>
+    <a class="btn" href="#">Google Scholar ↗</a>
+    <a class="btn" href="#">Resume PDF ↗</a>
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <span>Your Name · Data Scientist &amp; ML Engineer</span>
+  <span>Seoul, KR · 2025</span>
+</footer>
+
+<script>
+function toggle(head) {
+  head.parentElement.classList.toggle('open');
+}
+</script>
+</body>
+</html>
