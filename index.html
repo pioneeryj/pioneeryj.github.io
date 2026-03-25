@@ -35,10 +35,10 @@ nav { display: none; }/* PAGE */
 .profile-section {
   padding: 60px 0 56px;
   border-bottom: 2px solid var(--purple-light);
-  display: grid; grid-template-columns: 110px 1fr; gap: 36px; align-items: center;
+  display: grid; grid-template-columns: 160px 1fr; gap: 36px; align-items: center;
 }
 .profile-img {
-  width: 100px; height: 100px; border-radius: 50%;
+  width: 140px; height: 140px; border-radius: 50%;
   background: var(--purple-light);
   border: 3px solid var(--purple-mid);
   display: flex; align-items: center; justify-content: center;
@@ -88,7 +88,10 @@ nav { display: none; }/* PAGE */
 .about-text {
   font-size: 14px; color: var(--text2); line-height: 1.85;
 }
-.about-text p { margin-bottom: 12px; }
+.about-text p {
+  margin-bottom: 14px;
+  display: flex; gap: 10px; align-items: flex-start;
+}
 .about-text p:last-child { margin-bottom: 0; }/* ── SKILLS ── */
 .skills-wrap { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
 .skill-row {
@@ -103,7 +106,7 @@ nav { display: none; }/* PAGE */
   padding: 3px 9px; border-radius: 4px;
   background: var(--tag-bg); color: var(--tag-txt);
 }/* ── PUBLICATIONS ── */
-.pub-group { margin-bottom: 40px; }
+.pub-group { margin-bottom: 32px; }
 .pub-group:last-child { margin-bottom: 0; }
 .pub-group-label {
   font-size: 12px; font-weight: 700; letter-spacing: 0.06em;
@@ -111,17 +114,16 @@ nav { display: none; }/* PAGE */
   padding-bottom: 8px; border-bottom: 2px solid var(--purple);
   display: inline-block;
 }
-.pub-list { display: flex; flex-direction: column; gap: 2px; }
+.pub-list { display: flex; flex-direction: column; gap: 0; }
 .pub-item {
-  padding: 14px 0 14px 16px;
-  border-bottom: 1px solid var(--border);
+  padding: 14px 16px;
   border-left: 3px solid var(--purple-mid);
-  margin-left: 0;
+  margin-bottom: 10px;
   display: flex; gap: 0; align-items: flex-start;
   transition: border-color 0.15s;
+  border-bottom: none;
 }
 .pub-item:hover { border-left-color: var(--purple); }
-.pub-item:last-child { border-bottom: none; }
 .pub-num { display: none; }
 .pub-content { flex: 1; }
 .pub-title {
@@ -230,7 +232,7 @@ footer {
   <a class="nav-cta" href="#">이력서 ↗</a>
 </nav><div class="page"><!-- ── PROFILE ── -->
 <section class="profile-section">
-  <div class="profile-img">🧑‍💻</div>
+  <div class="profile-img"><img src="pdf/yoonji.jpg" alt="Yoonji Lee" /></div>
   <div>
     <div class="profile-name">이윤지 Yoonji Lee</div>
     <div class="profile-role">Data Scientist · AI/ML Engineer</div>
@@ -239,11 +241,12 @@ footer {
       Applied Statistics → AI/ML Research
     </div>
     <div class="profile-tags">
-      <span class="ptag">#Medical Image Segmentation</span>
+      <span class="ptag">#3D Medical Imaging</span>
       <span class="ptag">#Anomaly Detection</span>
-      <span class="ptag">#Contrastive Learning</span>
-      <span class="ptag">#Uncertainty</span>
-      <span class="ptag">#Statistics</span>
+      <span class="ptag">#XAI</span>
+      <span class="ptag">#Computer Vision</span>
+      <span class="ptag">#LLM</span>
+      <span class="ptag">#Machine Learning</span>
     </div>
     <div class="profile-links">
       <a class="btn primary" href="#publications">Publications</a>
@@ -262,9 +265,64 @@ footer {
 <section class="sec" id="about">
   <div class="sec-label">About Me</div>
   <div class="about-text">
-    <p>✨ 통계학 기반의 탄탄한 수리적 사고를 바탕으로, 딥러닝과 AI 연구로 확장해온 데이터 사이언티스트입니다.</p>
-    <p>중앙대학교 응용통계학과를 졸업하고 인공지능 전공 석사 과정을 수료했습니다. 대학원에서는 의료 이미지 분할, 대조학습, 불확실성 추정, 이상 탐지 분야의 연구를 수행하며 국제 학회 논문을 제1저자로 발표했습니다. 또한 LaivData Inc.에서의 산업 연구 인턴을 통해 실무 데이터 파이프라인 경험을 쌓았습니다.</p>
-    <p>연구와 실무 모두를 경험한 만큼, 문제를 정의하고 데이터로 풀어내는 전 과정에 관심이 있습니다. 새로운 도메인에서도 빠르게 적응하며 의미 있는 결과를 만들어내는 것을 목표로 합니다. 🔍</p>
+    <p>🌍 &nbsp;Data Scientist passionate about solving real-world problems with data and proposing novel approaches.</p>
+    <p>🔬 &nbsp;Experienced in end-to-end ML projects and AI research across multiple frameworks, building both research depth and engineering breadth.</p>
+    <p>💡 &nbsp;Particularly interested in 3D Medical Imaging, Anomaly Detection, and text-based Explainable AI. Always eager to explore new domains and ask better questions.</p>
+    <p>🤝 &nbsp;A collaborative team player who thrives on open discussion and finding the best solution together.</p>
+  </div>
+</section>
+<!-- ── EXPERIENCE ── -->
+<section class="sec" id="experience">
+  <div class="sec-label">경력 및 학력</div>
+  <div class="tl">
+    <div class="tl-row">
+      <div class="tl-date">2024.01 – 2026.02</div>
+      <div>
+        <div class="tl-role">대학원 연구원 (석사)</div>
+        <div class="tl-company">cau@IIPL · 중앙대학교 인공지능학과</div>
+        
+      </div>
+    </div>
+    <div class="tl-row">
+      <div class="tl-date">2023.07 – 2023.12</div>
+      <div>
+        <div class="tl-role">학부 연구인턴</div>
+        <div class="tl-company">cau@IIPL · 중앙대학교</div>
+        
+      </div>
+    </div>
+    <div class="tl-row">
+      <div class="tl-date">2023.01 – 2023.06</div>
+      <div>
+        <div class="tl-role">교환학생</div>
+        <div class="tl-company">San Francisco State University · CA, USA</div>
+        
+      </div>
+    </div>
+    <div class="tl-row">
+      <div class="tl-date">2022.07 – 2022.12</div>
+      <div>
+        <div class="tl-role">연구 인턴</div>
+        <div class="tl-company">LaivData Inc. · 서울</div>
+        
+      </div>
+    </div>
+    <div class="tl-row">
+      <div class="tl-date">2022.01 – 2023.12</div>
+      <div>
+        <div class="tl-role">동아리 활동</div>
+        <div class="tl-company">CUAI · 중앙대학교</div>
+        
+      </div>
+    </div>
+    <div class="tl-row">
+      <div class="tl-date">2019.03 – 2023.02</div>
+      <div>
+        <div class="tl-role">응용통계학과 학사 졸업</div>
+        <div class="tl-company">중앙대학교 · 서울</div>
+        
+      </div>
+    </div>
   </div>
 </section>
 <!-- ── PUBLICATIONS ── -->
@@ -294,9 +352,8 @@ footer {
             <a class="plink" href="https://github.com/pioneeryj" target="_blank">🔗 GitHub</a>
           </div>
         </div>
-      </div>    </div>
-  </div>        <div class="pub-item">
-        <div class="pub-num">[2]</div>
+      </div>
+      <div class="pub-item">
         <div class="pub-content">
           <div class="pub-title">HyCal: A Training-Free Prototype Calibration Method for Cross-Discipline Few-Shot Class-Incremental Learning</div>
           <div class="pub-authors">Eunju Lee<span class="star-other">*</span>, MiHyeon Kim<span class="star-other">*</span>, Junehyoung Kwon, <strong>Yoonji Lee</strong>, JiHyun Kim, Soojin Jang, YoungBin Kim</div>
@@ -335,10 +392,51 @@ footer {
             <a class="plink" href="https://aclanthology.org/2025.acl-long.271.pdf" target="_blank">📄 Paper</a>
           </div>
         </div>
-      </div><!-- Domestic -->
-  <div class="pub-group">
+      </div>
+      <div class="pub-item">
+        <div class="pub-content">
+          <div class="pub-title">Grounded Confidence with Selective LLM Auditing for Reliable Long-Tailed Radiology Reports <span class="badge-review">Under Review</span></div>
+          <div class="pub-authors"><strong>Yoonji Lee<span class="star">*</span></strong>, Junehyoung Kwon, Jinhee Jang, Eunju Lee, Kyeonghyun Kim, Dongjin Lee, Seunghoon Lee, YoungBin Kim</div>
+        </div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-content">
+          <div class="pub-title">Epistemic and Aleatory Uncertainty Guided Transparency Masking for Medical Image Segmentation <span class="badge-review">Under Review</span></div>
+          <div class="pub-authors"><strong>Yoonji Lee<span class="star">*</span></strong>, Eunju Lee, Junehyoung Kwon, Seunghoon Lee, YoungBin Kim</div>
+        </div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-content">
+          <div class="pub-title">Layer-Wise Attention Insights for Efficient Token Pruning in Multi-Image Vision-Language Models <span class="badge-review">Under Review</span></div>
+          <div class="pub-authors">Dongjin Lee<span class="star-other">*</span>, Eunju Lee, Jinhee Jang, <strong>Yoonji Lee</strong>, YoungBin Kim</div>
+        </div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-content">
+          <div class="pub-title">NegSep: Background-Aware Negative Separation for Zero-Shot OOD Detection <span class="badge-review">Under Review</span></div>
+          <div class="pub-authors">Kahyeon Kim<span class="star-other">*</span>, Eunju Lee, Keunhyeung Park, Junehyoung Kwon, <strong>Yoonji Lee</strong>, Hayeong Ryu, YoungBin Kim</div>
+        </div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-content">
+          <div class="pub-title">Learning Normality from Abnormality: Logical Anomaly Detection without Normal Data <span class="badge-review">Under Review</span></div>
+          <div class="pub-authors">Dongjin Lee<span class="star-other">*</span>, Junehyoung Kwon, Jinhee Jang, <strong>Yoonji Lee</strong>, YoungBin Kim</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Domestic -->
+  <div class="pub-group" style="margin-top: 32px;">
     <div class="pub-group-label">📖 Domestic</div>
     <div class="pub-list">
+      <div class="pub-item">
+        <div class="pub-content">
+          <div class="pub-title">준지도 의료 이미지 분할을 위한 불확실성 추정 기반 대조 학습</div>
+          <div class="pub-authors"><strong>이윤지<span class="star">*</span></strong>, 유승욱, 장수진, 김영빈</div>
+          <div class="pub-venue"><span class="venue-name">대한전자공학회 학술대회 · 2024.06</span></div>
+        </div>
+      </div>
       <div class="pub-item">
         <div class="pub-num">[1]</div>
         <div class="pub-content">
@@ -372,41 +470,21 @@ footer {
           </div>
         </div>
       </div>
+      <div class="pub-item">
+        <div class="pub-content">
+          <div class="pub-title">CLIP-UCT: Unseen Class Tokens for Robust Zero-Shot Semantic Segmentation</div>
+          <div class="pub-authors">이동진<span class="star-other">*</span>, <strong>이윤지</strong>, 이승훈, 왕일동, 김영빈</div>
+          <div class="pub-venue"><span class="venue-name">대한전자공학회 학술대회 · 2025.06</span></div>
+        </div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-content">
+          <div class="pub-title">Null 성분 복원 기반 표현 공간 확장을 통한 선호도 학습 최적화</div>
+          <div class="pub-authors">우윤규<span class="star-other">*</span>, 윤정민, 이은주, <strong>이윤지</strong>, 김영빈</div>
+          <div class="pub-venue"><span class="venue-name">대한전자공학회 학술대회 · 2025.06</span></div>
+        </div>
+      </div>
     </div>
-  </div>  <!-- Under Review -->
-  <div class="pub-group">
-    <div class="pub-group-label">⏳ Under Review</div>
-    <div class="pub-list">      <div class="pub-item">
-        <div class="pub-num">[1]</div>
-        <div class="pub-content">
-          <div class="pub-title">Grounded Confidence with Selective LLM Auditing for Reliable Long-Tailed Radiology Reports <span class="badge-review">Under Review</span></div>
-          <div class="pub-authors"><strong>Yoonji Lee<span class="star">*</span></strong>, Junehyoung Kwon, Jinhee Jang, Eunju Lee, Kyeonghyun Kim, Dongjin Lee, Seunghoon Lee, YoungBin Kim</div>
-        </div>
-      </div>      <div class="pub-item">
-        <div class="pub-num">[2]</div>
-        <div class="pub-content">
-          <div class="pub-title">Epistemic and Aleatory Uncertainty Guided Transparency Masking for Medical Image Segmentation <span class="badge-review">Under Review</span></div>
-          <div class="pub-authors"><strong>Yoonji Lee<span class="star">*</span></strong>, Eunju Lee, Junehyoung Kwon, Seunghoon Lee, YoungBin Kim</div>
-        </div>
-      </div>      <div class="pub-item">
-        <div class="pub-num">[3]</div>
-        <div class="pub-content">
-          <div class="pub-title">Layer-Wise Attention Insights for Efficient Token Pruning in Multi-Image Vision-Language Models <span class="badge-review">Under Review</span></div>
-          <div class="pub-authors">Dongjin Lee<span class="star-other">*</span>, Eunju Lee, Jinhee Jang, <strong>Yoonji Lee</strong>, YoungBin Kim</div>
-        </div>
-      </div>      <div class="pub-item">
-        <div class="pub-num">[4]</div>
-        <div class="pub-content">
-          <div class="pub-title">NegSep: Background-Aware Negative Separation for Zero-Shot OOD Detection <span class="badge-review">Under Review</span></div>
-          <div class="pub-authors">Kahyeon Kim<span class="star-other">*</span>, Eunju Lee, Keunhyeung Park, Junehyoung Kwon, <strong>Yoonji Lee</strong>, Hayeong Ryu, YoungBin Kim</div>
-        </div>
-      </div>      <div class="pub-item">
-        <div class="pub-num">[5]</div>
-        <div class="pub-content">
-          <div class="pub-title">Learning Normality from Abnormality: Logical Anomaly Detection without Normal Data <span class="badge-review">Under Review</span></div>
-          <div class="pub-authors">Dongjin Lee<span class="star-other">*</span>, Junehyoung Kwon, Jinhee Jang, <strong>Yoonji Lee</strong>, YoungBin Kim</div>
-        </div>
-      </div>    </div>
   </div></section><!-- ── PROJECTS ── -->
 <section class="sec" id="projects">
   <div class="sec-label">Projects</div>
@@ -418,8 +496,8 @@ footer {
       <div class="proj-tags">
         <span class="tag">Pose Estimation</span><span class="tag">Computer Vision</span><span class="tag">Industry</span>
       </div>
-      <h3>Pose Estimation — CareMind</h3>
-      <p>MediaPipe / OpenPose 기반 골격 추출 및 실시간 관절 각도 추정 파이프라인을 구축했습니다. 재활 지표 산출을 위한 커스텀 후처리 로직을 개발하고, 엣지 디바이스 배포 가능한 추론 파이프라인을 완성했습니다.</p>
+      <h3>Asymmetry Diagnosis for Capsular Contracture Prevention</h3>
+      <p>환자 흉부 이미지 기반 데이터셋을 구축하고, Pose Estimation 모델을 개발하여 유방 비대칭성을 정량적으로 평가했습니다. 모델 예측 수치를 활용한 비대칭 평가 지표를 새롭게 제안했습니다.</p>
       <div class="link-row">
         <a class="plink" href="https://github.com/pioneeryj" target="_blank">🔗 GitHub</a>
       </div>
@@ -485,59 +563,6 @@ footer {
       </div>
     </div>
 
-  </div>
-</section><!-- ── EXPERIENCE ── -->
-<section class="sec" id="experience">
-  <div class="sec-label">경력 및 학력</div>
-  <div class="tl">
-    <div class="tl-row">
-      <div class="tl-date">2024.01 – 2026.02</div>
-      <div>
-        <div class="tl-role">대학원 연구원 (석사)</div>
-        <div class="tl-company">cau@IIPL · 중앙대학교 인공지능학과</div>
-        
-      </div>
-    </div>
-    <div class="tl-row">
-      <div class="tl-date">2023.07 – 2023.12</div>
-      <div>
-        <div class="tl-role">학부 연구인턴</div>
-        <div class="tl-company">cau@IIPL · 중앙대학교</div>
-        
-      </div>
-    </div>
-    <div class="tl-row">
-      <div class="tl-date">2023.01 – 2023.06</div>
-      <div>
-        <div class="tl-role">교환학생</div>
-        <div class="tl-company">San Francisco State University · CA, USA</div>
-        
-      </div>
-    </div>
-    <div class="tl-row">
-      <div class="tl-date">2022.07 – 2022.12</div>
-      <div>
-        <div class="tl-role">연구 인턴</div>
-        <div class="tl-company">LaivData Inc. · 서울</div>
-        
-      </div>
-    </div>
-    <div class="tl-row">
-      <div class="tl-date">2022.01 – 2023.12</div>
-      <div>
-        <div class="tl-role">동아리 활동</div>
-        <div class="tl-company">CUAI · 중앙대학교</div>
-        
-      </div>
-    </div>
-    <div class="tl-row">
-      <div class="tl-date">2019.03 – 2023.02</div>
-      <div>
-        <div class="tl-role">응용통계학과 학사 졸업</div>
-        <div class="tl-company">중앙대학교 · 서울</div>
-        
-      </div>
-    </div>
   </div>
 </section><!-- ── BLOG ── -->
 <section class="sec" id="blog">
